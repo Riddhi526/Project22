@@ -3329,7 +3329,7 @@ function Sprite(pInst, _x, _y, _w, _h) {
       var thisInitialVelocity = p5.Vector.project(this.velocity, displacement);
       var otherInitialVelocity = p5.Vector.project(other.velocity, displacement);
 
-      // We only bullete about relative mass values, so if one of the sprites
+      // We only care about relative mass values, so if one of the sprites
       // is considered 'immovable' treat the _other_ sprite's mass as zero
       // to get the correct results.
       var thisMass = this.mass;
@@ -4089,8 +4089,8 @@ p5.prototype.createEdgeSprites = function() {
 
   var edgeThickness = 100;
 
-  var width = this._curElement.elt.offsetWidth;
-  var height = this._curElement.elt.offsetHeight;
+  var width = this.width;
+  var height = this.height;
 
   this.leftEdge = this.createSprite(-edgeThickness / 2, height / 2, edgeThickness, height);
   this.rightEdge = this.createSprite(width + (edgeThickness / 2), height / 2, edgeThickness, height);
